@@ -10,13 +10,10 @@ const videoConstraints = {
 
 function WebCamCapture() {
   const webcamRef = useRef(null);
-  const [image, setImage] = useState(null);
 
   //if expensive function, will save previous output needed if dependency changes to old state
   const capture = useCallback(() => {
     const imageSrc = webcamRef.current.getScreenshot();
-    console.log(imageSrc);
-    setImage(imageSrc);
   }, [webcamRef]);
 
   return (
@@ -35,7 +32,6 @@ function WebCamCapture() {
         onClick={capture}
         fontSize='large'
       />
-      <img src={image} alt='' />
     </div>
   );
 }
