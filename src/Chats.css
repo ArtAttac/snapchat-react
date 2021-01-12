@@ -39,3 +39,22 @@
   color: #fff;
   opacity: 1;
 }
+
+.chats__posts {
+  box-shadow: 1px -7px 7px -6px rgba(0, 0, 0, 0.44);
+  height: 359px;
+  background-color: white;
+  margin-top: -9px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  overflow: scroll;
+}
+
+.chats__posts::-webkit-scrollbar {
+  display: none;
+}
+
+.chats__posts {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
