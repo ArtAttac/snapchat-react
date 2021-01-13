@@ -28,6 +28,7 @@ function App() {
         dispatch(logout());
       }
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -36,22 +37,31 @@ function App() {
         {!user ? (
           <Login />
         ) : (
-          <div className='app__body'>
-            <Switch>
-              <Route path='/chats/view'>
-                <ChatView />
-              </Route>
-              <Route path='/chats'>
-                <Chats />
-              </Route>
-              <Route path='/preview'>
-                <Preview />
-              </Route>
-              <Route exact path='/'>
-                <WebCamCapture />
-              </Route>
-            </Switch>
-          </div>
+          <>
+            <img
+              src='https://lakeridgenewsonline.com/wp-content/uploads/2020/04/snapchat.jpg'
+              alt='snapchatlogo  '
+              className='app__logo'
+            />
+            <div className='app__body'>
+              <div className='app__bodyBackground'>
+                <Switch>
+                  <Route path='/chats/view'>
+                    <ChatView />
+                  </Route>
+                  <Route path='/chats'>
+                    <Chats />
+                  </Route>
+                  <Route path='/preview'>
+                    <Preview />
+                  </Route>
+                  <Route exact path='/'>
+                    <WebCamCapture />
+                  </Route>
+                </Switch>
+              </div>
+            </div>
+          </>
         )}
       </Router>
     </div>
